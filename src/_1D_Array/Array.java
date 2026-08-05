@@ -1,6 +1,5 @@
 package _1D_Array;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Array {
@@ -14,28 +13,40 @@ public class Array {
         int[] marks = new int[n];
 
         System.out.println("Enter the marks:");
-
         for (int i = 0; i < n; i++) {
             marks[i] = sc.nextInt();
         }
+
+        // Maximum
         int max = marks[0];
         for (int i = 1; i < n; i++) {
             if (marks[i] > max) {
                 max = marks[i];
             }
         }
-        System.out.println("The maximum number is " + max);
 
+        // Minimum
         int min = marks[0];
-        for (int i = 1; i > n; i++) {
-            if (marks[i] > min) {
+        for (int i = 1; i < n; i++) {
+            if (marks[i] < min) {
                 min = marks[i];
             }
         }
-        System.out.println("The minimum number is " + min);
 
+        // Sum
+        long sum = 0;
+        for (int i = 0; i < n; i++) {
+            sum += marks[i];
+        }
 
+        // Average
+        double average = 1.0* sum / n;
 
+        System.out.println("Maximum marks = " + max);
+        System.out.println("Minimum marks = " + min);
+        System.out.println("Sum of marks = " + sum);
+        System.out.println("Average marks = " + average);
 
+        sc.close();
     }
 }
